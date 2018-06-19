@@ -25,24 +25,19 @@ pproaches and Deliverables with DC crime Prediction
 ----------------------------------------------------
 # Sources: datasets
   1) Open Data DC
-    https://opendata.dc.gov/datasets/camera-enforcement-locations
-https://opendata.dc.gov/datasets/traffic-camera
-
-https://www.arcgis.com/home/webmap/viewer.html?webmap=c88bff76cd3e4568800a19e9f361822e
-
-https://opendata.dc.gov/datasets/crime-incidents-in-2017/data
-https://opendata.dc.gov/datasets/crime-incidents-in-2016
-https://opendata.dc.gov/datasets/crime-incidents-in-2015
-https://opendata.dc.gov/datasets/crime-incidents-in-2014
-https://opendata.dc.gov/datasets/crime-incidents-in-2013
-https://opendata.dc.gov/datasets/crime-incidents-in-2012
-
-http://opendata.dc.gov/datasets/real-property-tax-assessment-neighborhoods (
-http://opendata.dc.gov/datasets/real-property-tax-assessment-sub-neighborhoods
-
-https://mpdc.dc.gov/publication/shotspotter-data-disclaimer-and-dictionary
-
-https://opendata.dc.gov/datasets/specialty-lighting
+    - https://opendata.dc.gov/datasets/camera-enforcement-locations
+    -  https://opendata.dc.gov/datasets/traffic-camera
+    - https://www.arcgis.com/home/webmap/viewer.html?webmap=c88bff76cd3e4568800a19e9f361822e
+    - https://opendata.dc.gov/datasets/crime-incidents-in-2017/data
+    - https://opendata.dc.gov/datasets/crime-incidents-in-2016
+    - https://opendata.dc.gov/datasets/crime-incidents-in-2015
+    - https://opendata.dc.gov/datasets/crime-incidents-in-2014
+    - https://opendata.dc.gov/datasets/crime-incidents-in-2013
+    - https://opendata.dc.gov/datasets/crime-incidents-in-2012
+    - http://opendata.dc.gov/datasets/real-property-tax-assessment-neighborhoods 
+    - http://opendata.dc.gov/datasets/real-property-tax-assessment-sub-neighborhoods
+    - https://mpdc.dc.gov/publication/shotspotter-data-disclaimer-and-dictionary
+    - https://opendata.dc.gov/datasets/specialty-lighting
 
 
     - fetched, June, 2018
