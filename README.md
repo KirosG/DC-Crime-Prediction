@@ -177,9 +177,9 @@ The below table provides a description of attributes that will be removed becaus
 |DistrictID| The police district.| Redundant with PSA_ID. DistrictID can be derived from PSA_ID.|
 |SHIFT_Code| The duty shift that responded to the call.| This is an eight hour window that is too coarse grain.|
 |METHOD_Code| The coded method used to commit the crime.| Over 90% of the crimes are coded OTHER so this attribute is useless.|
-|CRIME_TYPE| The code for the type of crime. This attribute can be determined from OFFENSE_Code.|
-|AGE| The difference in end data and start date of the crime.| This attribute is unreliable due to the discrepency in start dates.|
-|TIME_TO_REPORT| The time it took for the police to report the crime.| This attribue represents action after the crime.|
+|CRIME_TYPE| The code for the type of crime. This attribute can be determined from |OFFENSE_Code.|
+|AGE| The difference in END_DATE and START_DATE of the crimeincident.| This attribute is unreliable due to the discrepency in START_DATE.|
+|TIME_TO_REPORT| The time it took for the police to report the crimeincident.| This attribue represents action after the crime has happened.|
 
 
 #### Attributes to Keep
@@ -187,11 +187,11 @@ The below table provides a description of attributes that will be used for predi
 
 |Attribute|Description|Role|
 |:------|:----------------|:----:|
-|ANC| Advisory Neighborhood Commission that is a geo-political grouping. This is our target attribute for task 2.| Feature and Target|
+|ANC| Advisory Neighborhood Commission that is a geo-political grouping. This is our target attribute.| Feature and Target|
 |NEIGHBORHOOD_CLUSTER|Neighborhood identifier that subdivides police wards.| Feature|
 |END_DATE| The latest the crime *might* have been committed. This attribute will be broken down into day of week, month of year, and hour of the day.| Features|
-|PSA_ID| Police Service Area that breaks down WARDS differently than ANC and NEIGHBORHOOD_CLUSTER.| Feature|
-|OFFENSE_Code| The category code of crime committed. This is our target attribute for task 1.| Feature and Target|
+|PSA_ID| Police Service Area that breaks down WARDS differently and NEIGHBORHOOD_CLUSTER.| Feature|
+|OFFENSE_Code| The category code of crime committed. This is our target attribute.| Feature and Target|
 |Latitude| The angular distance of the crime North of the earth's equator| Feature|
 |Longitude| The angular distance of the crime West of the meridian at Greenwich, England| Feature|
 
@@ -199,12 +199,11 @@ The below table provides a description of attributes that will be used for predi
 
 #### Attributes  Added to the crime incident report from different sources
 
-Our team was able to acquire data on the unemployment rates and housing prices for each of the 8 wards based on year. Of course, no data comes into play without the need for sufficient munging! A separate excel file was created to help fill the gaps with a multitude of INDEX/MATCH functions accross several sheets. The unemployment rates were also incomplete in a sense it was only yearly for the 8 wards only, but the housing prices data  we were using different informations for cross validation. 
+Our team was able to acquire data on the unemployment rates and housing prices for each of the 8 wards based on year. Of course, no data comes into play without the need for sufficient munging! A separate excel file was created to help fill the gaps with a multitude of INDEX/MATCH functions accross several sheets. The unemployment rates were also incomplete in a sense it was only yearly for the 8 wards, but the housing prices data  we were using different informations for cross validation. 
 
-Our team felt it was important to bring to light a characteristic about Theft and Robbery which may not be so apparent just by looking at the data set. It is important to take note that while Theft and Robberies may have a higher rate in certain neighborhoods, it is likely that those who are committing the crime most likely live in a completely separate region. It is highly unlikely that a suspect would steal from their neighbors, risking the higher chance of being caught with readily recognizable stolen goods. On the other hand, those areas which may have a higher drug use may experience exactly this as the neighborhood may have a different dynamic with respect to a communal mindset which may exist in other neighborhoods. As is usually the case, if there were more data readily available about the suspect as well as the victimology involved, there very well may be the possibility of being able to measure these aspects.
+Our team felt it was important to bring to light a characteristic about Theft and Robbery which may not be so apparent just by looking at the data set. It is important to take note that while Theft and Robberies may have a higher rate in certain neighborhoods, it is likely that those who are committing the crime most likely live in a completely separate location. It is highly unlikely that a suspect would steal from their neighbors, risking the higher chance of being caught with readily recognizable stolen goods[Here we just taking common sense]. On the other hand, those areas which may have a higher drug use may experience exactly this as the neighborhood may have a different dynamic with respect to a communal mindset which may exist in other neighborhoods[areas with high sex abuse and violent crime areas]. As is usually the case, if there were more data readily available about the suspect[identity,like age,location,status,demographics] as well as the victimology involved[by age and sex], there very well may be the possibility of being able to measure these aspects.
 
-
- A description of attributes that will be added for predicting crime incidents in Washington DC. Do these features help us predic a class of a crime?
+A description of attributes that  we have added for predicting crime incidents in Washington DC. Do these features help us predic a class of a crime?
 
 |Attribute|Description|Type|Role|
 |:------|:----------------|:---|:----:|
@@ -216,12 +215,10 @@ Our team felt it was important to bring to light a characteristic about Theft an
 
 
 #### Dataset Explanations
-we have two potential response variables: Crime_Type (nonviolent crime vs. Violent crime), and Offense_Code (The more specific type of offense: Homicide, Robbery, Theft, Arson, etc.). The goal is to provide the Metropolitant police Department with a model that can predict or classify a crime based on the available explanatory variables.
+we have two potential response variables: Crime_Type (nonviolent crime vs. Violent crime), and Offense_Code (The more specific type of offense: Homicide, Robbery, Theft, Arson, etc.). The goal is to provide the Metropolitant police Department with a model that can predict or classify a crime based on the available explanatory variables collected from the opendatadc as well as from the MPD website.
 
-One problem with this data is that the victim profile data is missing (due to privacy concerns, and the fact that non violent crimes are not necessarily because of the owner's profile). The explanatory variables for this dataset focus on time and locations. We believe that the detection/classification of a Violent crime would be based primarily on the victim's characteristics, and not exclusively on the location or time. The other problem with this data is that (fortunately) there are far fewer violent crimes than there are nonviolent crimes (approximately 83% of the 36000+ crime reports are against nonviolent rather than persons), so we have very imbalanced classification task.
+One problem with this data is that the victim profile data is missing (due to privacy concerns, and the fact that non violent crimes are not necessarily because of the owner's profile). The explanatory variables for this dataset focus on time and locations. We believe that the detection/classification of a Violent crime would be based primarily on the victim's characteristics, and not exclusively on the location or time. The other problem with this data is that (fortunately) there are far fewer violent crimes than there are nonviolent crimes (approximately 83% of the 36000+ crime reports are against nonviolent rather than persons), so we have very imbalanced classification.
 
-Our exploration of the variables seem to indicate that time (not necessarily the day, but the time during the day) is one of the more significant factors. We saw this in the SHIFT variable (which gives the Police duty shift that responded to the call). When we broke the time down into individual hours of the day, we saw a pronounced cyclic effect, where night-time crimes were far more likely than daytime crimes. Weekend crimes were slightly more likely than crimes during the work week, and monthly trends appeared to be opposite intuition (fall crimes were more likely than winter or summer crimes).
+Our exploration of the variables seem to indicate that time (not necessarily the day, but the time during the day) is one of the more significant factors[this was the visualization and we need to see for our prediction and modeling]. We saw this in the SHIFT variable (which gives the Police duty shift that responded to the call). When we broke the time down into individual hours of the day, we saw a pronounced cyclic effect, where night-time crimes were far more likely than daytime crimes[see feature selection and visualization notebook]. Weekend crimes were slightly more likely than crimes during the work week[visualization by week ], and monthly trends appeared to be opposite intuition (fall crimes were more likely than winter or summer crimes).The quarterly crime shows an increase during the second and third quarters as compared to the first and fourth quarter of the year.
 
-Location also appeared to have some influence, but the way the locations were grouped altered the effect significantly. Different political areas (Wards and the subordinate Association Neighborhood Committees) showed a different trend than using global locations (Latitude and Longitude). Police districts (and their subordinate Police Service Areas(PSA) showed a different trend than the Ward/ANC grouping. This tells us that there are some location effects, but it is difficult to separate them out due to the correlation between geo-physical areas and the different (but overlapping) political mappings.
-
-From what we can tell,the existing variables are not able to properly perform the classification tasks alone. As such, we have looked at including other data to attempt to fill in the picture more completely. As mentioned before, victim profile would be interesting and probably very helpful, but we would not be able to get access to that due to privacy concerns.  For this lab, the focus will be on classifying the Offense_Code (type of offense) classification instead of the type of crime, Crime_Type (nonviolent vs. Violent crime)  and classifying the ANC classification . Our tasks for this lab will be to leverage the crime data plus other supplimental data to predict the class of crime and the ANC where the crime was comitted.
+Location also appeared to have some influence, but the way the locations were grouped altered the effect significantly[the visualizationon notebook three by PSA]. Different political areas (Wards and the subordinate Association Neighborhood Committees) showed a different trend than using global locations (Latitude and Longitude). Police districts (and their subordinate Police Service Areas(PSA) showed a different trend than the Ward grouping. This tells us that there are some location effects, but it is difficult to separate them out due to the correlation between geo-physical areas and the different (but overlapping) political mappings[the ward classification based on distance is just not explanatory to justify the crimes]. The top violent crimes show significance across the anacostia river and around the business areas of the district, near the white house and all around the Georgia Avenue and towards the North East side of DC and areas bordering the Prince Georgecounty.
