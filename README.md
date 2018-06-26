@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 ### Project 5: The Lab @ DC Consulting Project
 
@@ -14,6 +15,10 @@ The[Lab @ DC](http://thelab.dc.gov/) is an organization within [DC Mayor Muriel 
 |James Linek     |  
 |Awab Idris      | 
 Cohorts of the Data Science Immersive, General Assembly @ Washington DC campus
+=======
+# Washiington DC Crime Prediction
+A team repo  for  project 5 for Client with The Lab @ DC (GA-DSI)
+>>>>>>> master
 
 # Settings
       1) Make sure you have `.gitignore` in your local repo by adding this line: `input/csr/*`
