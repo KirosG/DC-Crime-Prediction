@@ -190,28 +190,28 @@ Key points are (excerpted from methodology):
 
 The below table provides a description of attributes that will be removed because they provide little to no predictive power for the Washington DC Metropolitant Police Department crime incident report.
 
-=========================================================================================================
-|Attribute|Description|Removal Reason|
-|:------|:----------|:-------------|
-|REPORT_DAT| The date/time the offense was *reported*| When the crime was report is not a predictor of a crime.|
-|SHIFT| The duty shift that responded to the call.| This is an eight hour window that is too coarse grain.|
-|OFFENSE| The category of crime committed.| This attribute is redundant with OFFENSE_Code. It will be stored off for its labels.|
-|METHOD| The category of the method used to commit the crime.| This attribute is redundant with METHOD_Code. It will be stored off for its labels.|
-|DISTRICT| The police district.| This attribute was replaced earlier preprocessing to create DistrictID.|
-|PSA| Police Service Area| This attribute was replaced earlier preprocessing to create PSA_ID.|
-|WARD| The political Ward identifier.| WARD can be derived from NEIGHBORHOOD_CLUSTER which provides a smaller geographic resolution.|
-|CENSUS_TRACT| Land management tract identifier.| This attribute is superceded by other geographical data.|
-|VOTING_PRECINCT| Political subdivision| This attribute is superceded by other geographical data.|
-|CCN| Criminal Complaint Number - unique to each report| An index for the crime report.|
-|XBLOCK| Eastern coordinate of crime scene (meters)| This attribute is superceded by lattitude and longitude.|
-|YBLOCK| Northern coordinate of crime scene (meters)| This attribute is superceded by lattitude and longitude.|
-|START_DATE| The earliest the crime *might* have been committed.| END_DATE provides a more accurate time when considering unwitness crimes.|
-|DistrictID| The police district.| Redundant with PSA_ID. DistrictID can be derived from PSA_ID.|
-|SHIFT_Code| The duty shift that responded to the call.| This is an eight hour window that is too coarse grain.|
-|METHOD_Code| The coded method used to commit the crime.| Over 90% of the crimes are coded OTHER so this attribute is useless.|
-|CRIME_TYPE| The code for the type of crime. This attribute can be determined from |OFFENSE_Code.|
-|AGE| The difference in END_DATE and START_DATE of the crimeincident.| This attribute is unreliable due to the discrepency in START_DATE.|
-|TIME_TO_REPORT| The time it took for the police to report the crimeincident.| This attribue represents action after the crime has happened.|
+================================================================================================
+  |Attribute|Description|Removal Reason|
+  |:------|:----------|:-------------|
+  |REPORT_DAT| The date/time the offense was *reported*| When the crime was report is not a predictor of a crime.|
+  |SHIFT| The duty shift that responded to the call.| This is an eight hour window that is too coarse grain.|
+  |OFFENSE| The category of crime committed.| This attribute is redundant with OFFENSE_Code. It will be stored off for its labels.|
+  |METHOD| The category of the method used to commit the crime.| This attribute is redundant with METHOD_Code. It will be stored off for its labels.|
+  |DISTRICT| The police district.| This attribute was replaced earlier preprocessing to create DistrictID.|
+  |PSA| Police Service Area| This attribute was replaced earlier preprocessing to create PSA_ID.|
+  |WARD| The political Ward identifier.| WARD can be derived from NEIGHBORHOOD_CLUSTER which provides a smaller geographic resolution.|
+  |CENSUS_TRACT| Land management tract identifier.| This attribute is superceded by other geographical data.|
+  |VOTING_PRECINCT| Political subdivision| This attribute is superceded by other geographical data.|
+  |CCN| Criminal Complaint Number - unique to each report| An index for the crime report.|
+  |XBLOCK| Eastern coordinate of crime scene (meters)| This attribute is superceded by lattitude and longitude.|
+  |YBLOCK| Northern coordinate of crime scene (meters)| This attribute is superceded by lattitude and longitude.|
+  |START_DATE| The earliest the crime *might* have been committed.| END_DATE provides a more accurate time when considering unwitness crimes.|
+  |DistrictID| The police district.| Redundant with PSA_ID. DistrictID can be derived from PSA_ID.|
+  |SHIFT_Code| The duty shift that responded to the call.| This is an eight hour window that is too coarse grain.|
+  |METHOD_Code| The coded method used to commit the crime.| Over 90% of the crimes are coded OTHER so this attribute is useless.|
+  |CRIME_TYPE| The code for the type of crime. This attribute can be determined from |OFFENSE_Code.|
+  |AGE| The difference in END_DATE and START_DATE of the crimeincident.| This attribute is unreliable due to the discrepency in START_DATE.|
+  |TIME_TO_REPORT| The time it took for the police to report the crimeincident.| This attribue represents action after the crime has happened.|
 
 ===================================================================================================
 **Attributes to Keep**
