@@ -7,7 +7,8 @@ The[Lab @ DC](http://thelab.dc.gov/) is an organization within [DC Mayor Muriel 
 
 ## Project Title: Washington DC Crime Prediction
 =================================================================================
-**Authors**   **James Linek** ,**Eric  Plog** ,**Kiros Gebremariam**, **Awab Idris**  
+
+**Authors**   **James Linek** , **Eric  Plog** , **Kiros Gebremariam** ,  **Awab Idris**  
 
 ===================================================================================
 
@@ -177,15 +178,19 @@ Key points are (excerpted from methodology):
    release.
 
 
-===========================================================================================
+==================================================================
+
 **DATA DICTIONARY**
 
 **Attributes to Remove**
 
 The below table provides a description of attributes that will be removed because they provide little to no predictive power for the Washington DC Metropolitant Police Department crime incident report.
 
-=============================================================================================
+==========================================================================
+
+
 #### Attributes to Remove
+
 The below table provides a description of attributes that will be removed because they provide little to no predictive power.
 
 |Attribute|Description|Removal Reason|
@@ -206,18 +211,22 @@ The below table provides a description of attributes that will be removed becaus
 |DistrictID| The police district.| Redundant with PSA_ID. DistrictID can be found from PSA_ID.|
 |SHIFT_Code| The period of duty shift that responded to the call.|This is an eight hour period that is too coarse grain.|
 |METHOD_Code| The coded method used to commit the crime.| Over 91% of the crimes are coded OTHER so this attribute is useless.|
-|CRIME_TYPE| The code for the type of crime. This attribute can be determined from OFFENSE_Code.|
+|CRIME_TYPE| The code for the type of crime. This attribute can be determined   | from OFFENSE_Code.|
 |AGE| The difference in END_DATE and START_DATE of the crime.| This attribute is unreliable due to the discrepency in START_DATES.|
 |TIME_TO_REPORT| The time it took for the police to report the crime.| This attribue represents action after the crime has happened .|
 
-===============================================================================================
+================================================================================
 **Attributes to Keep**
 
 The below table provides a description of attributes that will be used for predicting crimeincidents in DC.
 
-===============================================================================================
-|Attribute|Description|Role|
-|:------|:----------------|:----:|
+=====================================================================================
+
+
+|Attribute                         |Description             |Role|
+
+|:---------------------------------|:-----------------------|:-------------------:|
+
 |ANC| Advisory Neighborhood Commission that is a geo-political grouping. This is our target attribute.| Feature and Target|
 |NEIGHBORHOOD_CLUSTER|Neighborhood identifier that subdivides police wards.| Feature|
 |END_DATE| The latest the crime *might* have been committed. This attribute will be broken down into day of week, month of year, and hour of the day.| Features|
@@ -230,7 +239,7 @@ The below table provides a description of attributes that will be used for predi
 
 **Attributes  Added to the crime incident report from different sources**
 
-========================================================================================
+===================================================================================
 
 
         Our team was able to acquire data on the unemployment rates and housing prices for each of the 8 wards based on year. Of course, no data comes into play without the need for sufficient munging! A separate excel file was created to help fill the gaps with a multitude of INDEX/MATCH functions accross several sheets. The unemployment rates were also incomplete in a sense it was only yearly for the 8 wards, but the housing prices data  we were using different informations for cross validation. 
