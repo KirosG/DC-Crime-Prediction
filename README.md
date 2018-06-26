@@ -6,9 +6,10 @@ The[Lab @ DC](http://thelab.dc.gov/) is an organization within [DC Mayor Muriel 
 [Eric Foster-Moore](http://thelab.dc.gov/eric.html), a data scientist at The Lab, will help us kick off this project on Thursday, June 14th. He will speak about the types of problems that The Lab seeks to address for the city, the specific questions which are formulated and answered by data scientists at The Lab, and the ways in which their findings are communicated to stakeholders.
 
 ## Project Title: Washington DC Crime Prediction
-===================================================================================================
-### Authors: James Linek,Eric  Plog ,Kiros Gebremariam,Awab Idris   
-====================================================================================================
+=================================================================================
+**Authors**   **James Linek** ,**Eric  Plog** ,**Kiros Gebremariam**, **Awab Idris**  
+
+===================================================================================
 
 **Cohorts of the Data Science Immersive[DSI April 2018], General Assembly @ Washington DC campus**
 ---------------------------------------------------------------------------------------------------
@@ -128,7 +129,7 @@ Case-Shiller data and includes both the national index and the indices for 20
 metropolitan regions. The indices are created using a repeat-sales methodology.
 
 **Data**
-==================================================================================================
+===============================================================================
 As per the [home page for Indices on S&P website][sp-home]:
 
 > The S&P/Case-Shiller U.S. National Home Price Index is a composite of
@@ -176,42 +177,45 @@ Key points are (excerpted from methodology):
    release.
 
 
-==========================================================================================================
+===========================================================================================
 **DATA DICTIONARY**
 
 **Attributes to Remove**
 
 The below table provides a description of attributes that will be removed because they provide little to no predictive power for the Washington DC Metropolitant Police Department crime incident report.
 
-================================================================================================
-|Attribute|Description             |Removal |                                           | Reason|
-|:---------------------------------|:---------------------------------|:--------------------------|
+=============================================================================================
+#### Attributes to Remove
+The below table provides a description of attributes that will be removed because they provide little to no predictive power.
 
-|REPORT_DAT| The date/time the offense was *reported*| When the crime was report is not a predictor of a crime.|
-|SHIFT| The duty shift that responded to the call.| This is an eight hour window that is too coarse grain.|
+|Attribute|Description|Removal Reason|
+|:------|:----------|:-------------|
+|REPORT_DAT| The date/time the offense was **reported**| When the crime was report is not a predictor of a crime.|
+|SHIFT| The duty shift that responded the call.| This is an eight hour period.                     |
 |OFFENSE| The category of crime committed.| This attribute is redundant with OFFENSE_Code. It will be stored off for its labels.|
 |METHOD| The category of the method used to commit the crime.| This attribute is redundant with METHOD_Code. It will be stored off for its labels.|
-|DISTRICT| The police district.| This attribute was replaced earlier preprocessing to create DistrictID.|
-|PSA| Police Service Area| This attribute was replaced earlier preprocessing to create PSA_ID.|
+|DISTRICT| The police district.| This attribute was replaced by new feature  DistrictID.|
+|PSA| Police Service Area| This attribute was replaced to create PSA_ID.|
 |WARD| The political Ward identifier.| WARD can be derived from NEIGHBORHOOD_CLUSTER which provides a smaller geographic resolution.|
-|CENSUS_TRACT| Land management tract identifier.| This attribute is superceded by other geographical data.|
-|VOTING_PRECINCT| Political subdivision| This attribute is superceded by other geographical data.|
+|CENSUS_TRACT| Land management tract identifier.| This attribute is replaced by other geographical data.|
+|VOTING_PRECINCT| Political subdivision| This attribute is replaced by other geographical data.|
 |CCN| Criminal Complaint Number - unique to each report| An index for the crime report.|
-|XBLOCK| Eastern coordinate of crime scene (meters)| This attribute is superceded by lattitude and longitude.|
-|YBLOCK| Northern coordinate of crime scene (meters)| This attribute is superceded by lattitude and longitude.|
-|START_DATE| The earliest the crime *might* have been committed.| END_DATE provides a more accurate time when considering unwitness crimes.|
-|DistrictID| The police district.| Redundant with PSA_ID. DistrictID can be derived from PSA_ID.|
-|SHIFT_Code| The duty shift that responded to the call.| This is an eight hour window that is too coarse grain.|
-|METHOD_Code| The coded method used to commit the crime.| Over 90% of the crimes are coded OTHER so this attribute is useless.|
-|CRIME_TYPE| The code for the type of crime. This attribute can be determined from |OFFENSE_Code.|
-|AGE| The difference in END_DATE and START_DATE of the crimeincident.| This attribute is unreliable due to the discrepency in START_DATE.|
-|TIME_TO_REPORT| The time it took for the police to report the crimeincident.| This attribue represents action after the crime has happened.|
+|XBLOCK| Eastern coordinate of crime scene (meters)| This attribute is replaced by lattitude and longitude.|
+|YBLOCK| Northern coordinate of crime scene (meters)| This attribute is replaced by lattitude and longitude.|
+|START_DATE| The earliest the crime **might** have been committed.| END_DATE provides a more accurate time when considering  crimes not solved/resolved.|
+|DistrictID| The police district.| Redundant with PSA_ID. DistrictID can be found from PSA_ID.|
+|SHIFT_Code| The period of duty shift that responded to the call.|This is an eight hour period that is too coarse grain.|
+|METHOD_Code| The coded method used to commit the crime.| Over 91% of the crimes are coded OTHER so this attribute is useless.|
+|CRIME_TYPE| The code for the type of crime. This attribute can be determined from OFFENSE_Code.|
+|AGE| The difference in END_DATE and START_DATE of the crime.| This attribute is unreliable due to the discrepency in START_DATES.|
+|TIME_TO_REPORT| The time it took for the police to report the crime.| This attribue represents action after the crime has happened .|
 
-===================================================================================================
+===============================================================================================
 **Attributes to Keep**
 
 The below table provides a description of attributes that will be used for predicting crimeincidents in DC.
-===================================================================================================
+
+===============================================================================================
 |Attribute|Description|Role|
 |:------|:----------------|:----:|
 |ANC| Advisory Neighborhood Commission that is a geo-political grouping. This is our target attribute.| Feature and Target|
@@ -225,7 +229,8 @@ The below table provides a description of attributes that will be used for predi
 
 
 **Attributes  Added to the crime incident report from different sources**
-=========================================================================================================
+
+========================================================================================
 
 
         Our team was able to acquire data on the unemployment rates and housing prices for each of the 8 wards based on year. Of course, no data comes into play without the need for sufficient munging! A separate excel file was created to help fill the gaps with a multitude of INDEX/MATCH functions accross several sheets. The unemployment rates were also incomplete in a sense it was only yearly for the 8 wards, but the housing prices data  we were using different informations for cross validation. 
@@ -236,7 +241,7 @@ The below table provides a description of attributes that will be used for predi
 
         A description of attributes that  we have added for predicting crime incidents in Washington DC. Do these features help us predic a class of a crime?
 
-====================================================================================================
+===========================================================================================
 
       |Attribute|Description|Type|Role|
       |:------|:----------------|:---|:----:|
