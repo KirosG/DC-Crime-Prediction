@@ -203,12 +203,8 @@ Our team was able to acquire data on the unemployment rates and housing prices f
 
 Our team felt it was important to bring to light a characteristic about Theft and Robbery which may not be so apparent just by looking at the data set. It is important to take note that while Theft and Robberies may have a higher rate in certain neighborhoods, it is likely that those who are committing the crime most likely live in a completely separate region. It is highly unlikely that a suspect would steal from their neighbors, risking the higher chance of being caught with readily recognizable stolen goods. On the other hand, those areas which may have a higher drug use may experience exactly this as the neighborhood may have a different dynamic with respect to a communal mindset which may exist in other neighborhoods. As is usually the case, if there were more data readily available about the suspect as well as the victimology involved, there very well may be the possibility of being able to measure these aspects.
 
-![Ward Map](images/ancMapExample.png "ANC Map") 
-<p style='text-align: center;'>
-Imputed data for ANC Map
-</p>
 
-The below table provides a description of attributes that will be added for predicting crimes in DC. Do these features help us predic a class of a crime?
+ A description of attributes that will be added for predicting crime incidents in Washington DC. Do these features help us predic a class of a crime?
 
 |Attribute|Description|Type|Role|
 |:------|:----------------|:---|:----:|
