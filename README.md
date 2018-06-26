@@ -23,19 +23,28 @@ Cohorts of the Data Science Immersive, General Assembly @ Washington DC campus
             - this will create  `.gitattributes` in your local repository.
 
 # Approaches
+
 Approaches and Deliverables with the DC crime Prediction 
+
 **Approaches** 
+
           - Determine which variables provide the highest correlation with crime incidents based on the data of Crime incidents  from 2012-2018 datasets
           - Visualize crime incidents  
-           - Heatmaps and Visual estimate plots to correlate variables 
+          - Heatmaps and Visual estimate plots to correlate variables 
+
 **Feature selection**
+
           - Time series analysis on variables across the time period of 2012-2018 
           - Identify seasonal effects by week, month, weekdays,quarters of the year and annual
-           - Determine anomalies on the Dataset based on shift,PSA,Ward,Start and end date 
+          - Determine anomalies on the Dataset based on shift,PSA,Ward,Start and end date 
+
   **Prediction models** 
+
           - Regression (to determine the evolution of patterns over time,by Age of the crime, length of time to respond) Clustering (to determine common patterns across census tracts, Wards, etc.) Classification (to predict if a given crime is likely to happen in a given time and location) 
+
   **Deliverables**
           - A notebook including: Analysis of crime patterns Models for predicting crime
+
 ----------------------------------------------------
 # Sources: datasets
   1) Open Data DC
