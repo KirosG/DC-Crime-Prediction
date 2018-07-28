@@ -57,11 +57,11 @@ TPOT is a Python Automated Machine Learning tool that optimizes machine learning
 
 ![](https://cdn-images-1.medium.com/max/800/1*fvLW5xrxbAmbFPaDJBSogg.png)
 
-source:[https://epistasislab.github.io/tpot/](https://epistasislab.github.io/tpot/)
+[source:](https://epistasislab.github.io/tpot/)
 
 For a project, I was assigned to predict which type of crime occurred based on various features (i.e., location, month, etc.) in Washington DC. This was the first time I used TPOT, and had great results compared to manually grid searching and tuning hyper parameters over several different types of models. Thus, I wanted to share my results:
 
-First Install TPOT ([https://epistasislab.github.io/tpot/installing/](https://epistasislab.github.io/tpot/installing/))
+First [Install TPOT] (https://epistasislab.github.io/tpot/installing/)
 
 conda **install** numpy scipy scikit-learn pandas
 
@@ -102,7 +102,7 @@ X_test = ss.transform(X_test)
 
 Sevenths Decide which parameters and config_dict are ideal for your data and computing power.
 
-- List of config_dicts from -[https://epistasislab.github.io/tpot/using/#built-in-tpot-configurations](https://epistasislab.github.io/tpot/using/#built-in-tpot-configurations)
+- [List of config_dicts from] (https://epistasislab.github.io/tpot/using/#built-in-tpot-configurations)
 
 Default TPOT - TPOT will search over a broad range of preprocessors, feature constructors, feature selectors, models, and parameters to find a series of operators that minimize the error of the model predictions. Some of these operators are complex and may take a long time to run, especially on larger datasets.   
 
@@ -118,8 +118,8 @@ TPOT sparse - TPOT uses a configuration dictionary with a one-hot encoder and th
 
 This configuration works for both the TPOTClassifier and TPOTRegressor.  
 
-- List of TPOT Regression parameters :[https://epistasislab.github.io/tpot/api/#regression](https://epistasislab.github.io/tpot/api/#regression)
-- List of TPOT Classifier parameters:[https://epistasislab.github.io/tpot/api/#classification](https://epistasislab.github.io/tpot/api/#classification)
+- [List of TPOT Regression parameters :](https://epistasislab.github.io/tpot/api/#regression)
+- [List of TPOT Classifier parameters:](https://epistasislab.github.io/tpot/api/#classification)
 - Keep in mind that TPOT is computationally expensive, so increasing the generations, population size and cv will dramatically increase the time it takes to complete.
 - See below for the parameters used on my DC crime model:
 
@@ -182,20 +182,18 @@ Approaches and Deliverables with the DC crime Prediction
 
   **1) Open Data DC**
 
-        - https://opendata.dc.gov/datasets/camera-enforcement-locations
-        - https://opendata.dc.gov/datasets/traffic-camera
-        - https://www.arcgis.com/home/webmap/viewer.html?webmap=c88bff76cd3e4568800a19e9f361822e
-        - https://opendata.dc.gov/datasets/crime-incidents-in-2017/data
-        - https://opendata.dc.gov/datasets/crime-incidents-in-2016
-        - https://opendata.dc.gov/datasets/crime-incidents-in-2015
-        - https://opendata.dc.gov/datasets/crime-incidents-in-2014
-        - https://opendata.dc.gov/datasets/crime-incidents-in-2013
-        - https://opendata.dc.gov/datasets/crime-incidents-in-2012
-        - http://opendata.dc.gov/datasets/real-property-tax-assessment-neighborhoods 
-        - http://opendata.dc.gov/datasets/real-property-tax-assessment-sub-neighborhoods
-        - https://mpdc.dc.gov/publication/shotspotter-data-disclaimer-and-dictionary
-        - https://opendata.dc.gov/datasets/specialty-lighting
-        - https://datahub.io/core/house-prices-us#data
+        -[Camera-enforcement-locations](https://opendata.dc.gov/datasets/camera-enforcement-locations)
+        -[Traffic-camera](https://opendata.dc.gov/datasets/traffic-camera)
+        -[GIS](https://www.arcgis.com/home/webmap/viewer.html?webmap=c88bff76cd3e4568800a19e9f361822e)
+        -[Crime-incidents-in-2017](https://opendata.dc.gov/datasets/crime-incidents-in-2017/data)
+        - [Crime-incidents-in-2016](https://opendata.dc.gov/datasets/crime-incidents-in-2016)
+        - [Crime-incidents-in-2015](https://opendata.dc.gov/datasets/crime-incidents-in-2015)
+        - [Crime-incidents-in-2014](https://opendata.dc.gov/datasets/crime-incidents-in-2014)
+        - [Crime-incidents-in-2013](https://opendata.dc.gov/datasets/crime-incidents-in-2013)
+        - [Crime-incidents-in-2012](https://opendata.dc.gov/datasets/crime-incidents-in-2012)
+        - [Real-property-tax-assessment-neighborhoods](http://opendata.dc.gov/datasets/real-property-tax-assessment-neighborhoods) 
+        - [Real-property-tax-assessment-sub-neighborhoods](http://opendata.dc.gov/datasets/real-property-tax-assessment-sub-neighborhoods)
+        -[house-prices-us#data](https://datahub.io/core/house-prices-us#data)
               - fetched, June, 2018
 
 **Additional from the Project lab**
