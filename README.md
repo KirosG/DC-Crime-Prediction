@@ -25,6 +25,8 @@ WASHINGTON-DC-AERIAL VIEW
 
 Washington, DC, the nation’s capital, is the place created and planned as the seat of government and policy, a city that evokes the past and the nation’s heritage. The heart of Washington, DC is in its buildings, such as the White House, the Capitol, and the Supreme Court, its memorials, and its many open spaces, including the National Mall. There is so much more to write about the beautiful, clean city of Washington, DC. Today is July 4, independence day, we all are having fun and enjoying the independence day. i am just taking a minute to write something important about the unique public safety issues in the nations capital, just to share some of the presentations we make yesterday to the DC lab project using public data. While celebrating the independence day, just watching the fireworks its astonishing to be here at the nations capital, depending on which quadrant of the city you celebrating independence day; your personal safety is always the priority concern for family and friends . so we used publicly available data to predict crimes in the nations capital using attributes that are commonly used features by the MPD. Contrary to the general belief that crimes happen at night or dark, in the nations capital most offensess or crimes happen during the evening.
 
+![](https://cdn-images-1.medium.com/max/800/1*2zMu2u8F-ILjr6CvhJhDnA.png)
+
 The following pie Chart shows total crime recorded from different shifts: Day, Evening and midnight. The specific time range about the three classifications was given in the open dataset, which i used as my source to write this blog. We still can observe a relatively low quantity of crime during midnight time range.
 
 ![](https://cdn-images-1.medium.com/max/800/1*01xO81LmXR3zmBvl78uZ7A.png)
@@ -49,8 +51,6 @@ Crimes are said to escalate during holidays. The definition of holidays for this
 
 The chart above was an attempt to see if there was a geographic distribution to the various violent crimes across the district. While there does appear to be a few clumps of dangerous areas, in general it appears to be spread throughout D.C. — with the notable exception of the Northwest area (Police District 2). I am surprised by the density of violent crimes near the downtown DC. if you want read more or download the jupyter notebook please click[here.](https://github.com/KirosG/DC-Crime-Prediction)
 
-
-
 # Using TPOT to Predict DC Crimes
 
 TPOT is a Python Automated Machine Learning tool that optimizes machine learning pipelines by intelligently exploring thousands of possible pipelines to find the best one for your data. TPOT works on every model I have tried, with the exception of Neural Networks.
@@ -61,7 +61,7 @@ source:[https://epistasislab.github.io/tpot/](https://epistasislab.github.io/tpo
 
 For a project, I was assigned to predict which type of crime occurred based on various features (i.e., location, month, etc.) in Washington DC. This was the first time I used TPOT, and had great results compared to manually grid searching and tuning hyper parameters over several different types of models. Thus, I wanted to share my results:
 
-1. Install TPOT ([https://epistasislab.github.io/tpot/installing/](https://epistasislab.github.io/tpot/installing/))
+First Install TPOT ([https://epistasislab.github.io/tpot/installing/](https://epistasislab.github.io/tpot/installing/))
 
 conda **install** numpy scipy scikit-learn pandas
 
@@ -69,13 +69,13 @@ pip **install** deap update_checker tqdm stopit
 
 # **For** **WINDOWS only:** 1) Python version <=3.3 pip install pywin32
 
-2) For any python version conda install pywin32
+Second  For any python version conda install pywin32
 
 pip **install** xgboost (only required if you plan to use XGBoost)
 
 pip **install** tpot
 
-2. Import TPOT Classifier or TPOT Regressor depending on the nature of your problem
+Third Import TPOT Classifier or TPOT Regressor depending on the nature of your problem
 
 from tpot import TPOTClassifier
 
@@ -83,24 +83,24 @@ from tpot import TPOTClassifier
 
 from tpot import TPOTRegressor
 
-3. Define X and y variables
+Fourth Define X and y variables
 
 features = [‘LONGITUDE’,’LATITUDE’,’PSA’,’AGE’,’SHIFT_EVENING’, ‘SHIFT_MIDNIGHT’,’METHOD_Code’,’Year’,’Month’,’Day’,’hour’,’dayofyear’,’WARD’,’week’,’quarter’]
 
 X = dc3[features]  
 y = dc3[‘OFFENSE_Code’] #9 different crimes to predict
 
-3. Train, test and split your data
+Fifth Train, test and split your data
 
 X_train, X_test, y_train, y_test = train_test_split(X, y,random_state=42)
 
-4. Scale your data
+Sixths Scale your data
 
 ss = StandardScaler()  
 X_train = ss.fit_transform(X_train)  
 X_test = ss.transform(X_test)
 
-5. Decide which parameters and config_dict are ideal for your data and computing power.
+Sevenths Decide which parameters and config_dict are ideal for your data and computing power.
 
 - List of config_dicts from -[https://epistasislab.github.io/tpot/using/#built-in-tpot-configurations](https://epistasislab.github.io/tpot/using/#built-in-tpot-configurations)
 
@@ -129,7 +129,7 @@ As you can see, I used small parameters and the model still took roughly 8 hours
 
 Although a score of 59% on the train and test sets is not the greatest, it still out performed my manual models by a large margin. In order to get a better model, I would need to collect additional data such as unemployment rate or housing prices per neighborhood. 
 
-6. Feature Importance
+Eighths Feature Importance
 
 important_features = pd.Series(data=dt.feature_importances_,index=X.columns)  
 important_features.sort_values(ascending=False,inplace=True)
@@ -141,12 +141,6 @@ pd.DataFrame(important_features).plot(kind = 'barh', grid=False)
 ![](https://cdn-images-1.medium.com/max/800/1*-ezh7nKOUMLuz1FdOl6Lsg.png)
 
 In summation, TPOT is a very helpful tool to help identify the optimal model and parameters to achieve the best model possible.
-
-
-
-
-
-**Thanks for your claps. Always appreciated and if you want to read about my other posts please follow my blog for updates or visit my**[**Github.**](https://github.com/KirosG/DC-Crime-Prediction)
 
 
 
@@ -183,16 +177,6 @@ Approaches and Deliverables with the DC crime Prediction
           - A notebook including: Analysis of crime patterns Models for predicting crime
 
 ---
-
-
-
-
-
-
-
-
-
-
 
 # Sources: datasets
 
@@ -250,6 +234,7 @@ Approaches and Deliverables with the DC crime Prediction
 -**Property-Related**:
 
 - Can you identify different features from an [aerial image](http://opendata.dc.gov/pages/dc-from-above) in order to predict whether a house is vacant, or identify the type of property?
+
   - Using [Real Property Values](http://opendata.dc.gov/datasets?q=real%20property):
   - Can you estimate or assess housing values based on aerial imagery, voter file data, and other information?
   - Can we make inferences about property values or demographic trends given construction and occupancy permits?
@@ -393,13 +378,12 @@ The below table provides a description of attributes that will be used for predi
 
 ===================================================================================
 
-        Our team was able to acquire data on the unemployment rates and housing prices for each of the 8 wards based on year. Of course, no data comes into play without the need for sufficient munging! A separate excel file was created to help fill the gaps with a multitude of INDEX/MATCH functions accross several sheets. The unemployment rates were also incomplete in a sense it was only yearly for the 8 wards, but the housing prices data  we were using different informations for cross validation. 
+    Our team was able to acquire data on the unemployment rates and housing prices for each of the 8 wards based on year. Of course, no data comes into play without the need for sufficient munging! A separate excel file was created to help fill the gaps with a multitude of INDEX/MATCH functions accross several sheets. The unemployment rates were also incomplete in a sense it was only yearly for the 8 wards, but the housing prices data  we were using different informations for cross validation. 
+    
+    Our team felt it was important to bring to light a characteristic about Theft and Robbery which may not be so apparent just by looking at the data set. It is important to take note that while Theft and Robberies may have a higher rate in certain neighborhoods, it is likely that those who are committing the crime most likely live in a completely separate location. It is highly unlikely that a suspect would steal from their neighbors, risking the higher chance of being caught with readily recognizable stolen goods[Here we just taking common sense]. On the other hand, those areas which may have a higher drug use may experience exactly this as the neighborhood may have a different dynamic with respect to a communal mindset which may exist in other neighborhoods[areas with high sex abuse and violent crime areas]. As is usually the case, if there were more data readily available about the suspect[identity,like age,location,status,demographics] as well as the victimology involved[by age and sex], there very well may be the possibility of being able to measure these aspects.
     
     
-       Our team felt it was important to bring to light a characteristic about Theft and Robbery which may not be so apparent just by looking at the data set. It is important to take note that while Theft and Robberies may have a higher rate in certain neighborhoods, it is likely that those who are committing the crime most likely live in a completely separate location. It is highly unlikely that a suspect would steal from their neighbors, risking the higher chance of being caught with readily recognizable stolen goods[Here we just taking common sense]. On the other hand, those areas which may have a higher drug use may experience exactly this as the neighborhood may have a different dynamic with respect to a communal mindset which may exist in other neighborhoods[areas with high sex abuse and violent crime areas]. As is usually the case, if there were more data readily available about the suspect[identity,like age,location,status,demographics] as well as the victimology involved[by age and sex], there very well may be the possibility of being able to measure these aspects.
-    
-    
-        A description of attributes that  we have added for predicting crime incidents in Washington DC. Do these features help us predic a class of a crime?
+    A description of attributes that  we have added for predicting crime incidents in Washington DC.Do these features help us predic a class of a crime?
 
 ===========================================================================================
 
