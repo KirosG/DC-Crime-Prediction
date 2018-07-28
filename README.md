@@ -332,7 +332,7 @@ Key points are (excerpted from methodology):
    addition, the actual location of the XLS file continues to change on each
    release.
 
-==================================================================
+================================================================
 
 **DATA DICTIONARY**
 
@@ -340,7 +340,7 @@ Key points are (excerpted from methodology):
 
 The below table provides a description of attributes that will be removed because they provide little to no predictive power for the Washington DC Metropolitant Police Department crime incident report.
 
-==========================================================================
+===================================================================
 
 #### Attributes to Remove
 
@@ -369,25 +369,40 @@ The below table provides a description of attributes that will be removed becaus
 | TIME_TO_REPORT  | The time it took for the police to report the crime.             | This attribue represents action after the crime has happened .                                |
 
 ==============================================================
+
+
+
+
+
 **Attributes to Keep**
+
+
 
 The below table provides a description of attributes that will be used for predicting crimeincidents in DC.
 
+
+
 ================================================================
+
+
 
 |Attribute                         |Description             |Role|
 
-|:---------------------------------|:-----------------------|:-------------------:|
+| :--------------------------------- | :----------------------- | :-------------------: |
+| ---------------------------------- | ------------------------ | --------------------- |
+|                                    |                          |                       |
 
-|ANC| Advisory Neighborhood Commission that is a geo-political grouping. This is our target attribute.| Feature and Target|
-|NEIGHBORHOOD_CLUSTER|Neighborhood identifier that subdivides police wards.| Feature|
-|END_DATE| The latest the crime *might* have been committed. This attribute will be broken down into day of week, month of year, and hour of the day.| Features|
-|PSA_ID| Police Service Area that breaks down WARDS differently and NEIGHBORHOOD_CLUSTER.| Feature|
-|OFFENSE_Code| The category code of crime committed. This is our target attribute.| Feature and Target|
-|Latitude| The angular distance of the crime North of the earth's equator| Feature|
-|Longitude| The angular distance of the crime West of the meridian at Greenwich, England| Feature|
+
+
+| ANC | Advisory Neighborhood Commission that is a geo-political grouping. This is our target attribute. | Feature and Target |
+| --- | ------------------------------------------------------------------------------------------------ | ------------------ |
+|     |                                                                                                  |                    |
+
+
 
 **Attributes  Added to the crime incident report from different sources**
+
+
 
 ==================================================================
 
@@ -401,7 +416,9 @@ The below table provides a description of attributes that will be used for predi
 ===============================================================
 
       |Attribute|Description|Type|Role|
+      
       |:------|:----------------|:---|:----:|
+      
       |Housing_Prices| Sales prices of the homes per WARD | Continuous| Feature|
       |Unemployment| Unemployment rate per WARD | Continuous| Feature|
       |Month|The latest month the crime was comitted.| Ordinal| Feature|
@@ -412,8 +429,8 @@ The below table provides a description of attributes that will be used for predi
 
        we have two potential response variables: Crime_Type (nonviolent crime vs. Violent crime), and Offense_Code (The more specific type of offense: Homicide, Robbery, Theft, Arson, etc.). The goal is to provide the Metropolitant police Department with a model that can predict or classify a crime based on the available explanatory variables collected from the opendatadc as well as from the MPD website.
     
-       One problem with this data is that the victim profile data is missing (due to privacy concerns, and the fact that non violent crimes are not necessarily because of the owner's profile). The explanatory variables for this dataset focus on time and locations. We believe that the detection/classification of a Violent crime would be based primarily on the victim's characteristics, and not exclusively on the location or time. The other problem with this data is that (fortunately) there are far fewer violent crimes than there are nonviolent crimes (approximately 83% of the 36000+ crime reports are against nonviolent rather than persons), so we have very imbalanced classification.
+    One problem with this data is that the victim profile data is missing (due to privacy concerns, and the fact that non violent crimes are not necessarily because of the owner's profile). The explanatory variables for this dataset focus on time and locations. We believe that the detection/classification of a Violent crime would be based primarily on the victim's characteristics, and not exclusively on the location or time. The other problem with this data is that (fortunately) there are far fewer violent crimes than there are nonviolent crimes (approximately 83% of the 36000+ crime reports are against nonviolent rather than persons), so we have very imbalanced classification.
     
-       Our exploration of the variables seem to indicate that time (not necessarily the day, but the time during the day) is one of the more significant factors[this was the visualization and we need to see for our prediction and modeling]. We saw this in the SHIFT variable (which gives the Police duty shift that responded to the call). When we broke the time down into individual hours of the day, we saw a pronounced cyclic effect, where night-time crimes were far more likely than daytime crimes[see feature selection and visualization notebook]. Weekend crimes were slightly more likely than crimes during the work week[visualization by week ], and monthly trends appeared to be opposite intuition (fall crimes were more likely than winter or summer crimes).The quarterly crime shows an increase during the second and third quarters as compared to the first and fourth quarter of the year.
+    Our exploration of the variables seem to indicate that time (not necessarily the day, but the time during the day) is one of the more significant factors[this was the visualization and we need to see for our prediction and modeling]. We saw this in the SHIFT variable (which gives the Police duty shift that responded to the call). When we broke the time down into individual hours of the day, we saw a pronounced cyclic effect, where night-time crimes were far more likely than daytime crimes[see feature selection and visualization notebook]. Weekend crimes were slightly more likely than crimes during the work week[visualization by week ], and monthly trends appeared to be opposite intuition (fall crimes were more likely than winter or summer crimes).The quarterly crime shows an increase during the second and third quarters as compared to the first and fourth quarter of the year.
     
-       Location also appeared to have some influence, but the way the locations were grouped altered the effect significantly[the visualizationon notebook three by PSA]. Different political areas (Wards and the subordinate Association Neighborhood Committees) showed a different trend than using global locations (Latitude and Longitude). Police districts (and their subordinate Police Service Areas(PSA) showed a different trend than the Ward grouping. This tells us that there are some location effects, but it is difficult to separate them out due to the correlation between geo-physical areas and the different (but overlapping) political mappings[the ward classification based on distance is just not explanatory to justify the crimes]. The top violent crimes show significance across the anacostia river and around the business areas of the district, near the white house and all around the Georgia Avenue and towards the North East side of DC and areas bordering the Prince Georgecounty.
+    Location also appeared to have some influence, but the way the locations were grouped altered the effect significantly[the visualizationon notebook three by PSA]. Different political areas (Wards and the subordinate Association Neighborhood Committees) showed a different trend than using global locations (Latitude and Longitude). Police districts (and their subordinate Police Service Areas(PSA) showed a different trend than the Ward grouping. This tells us that there are some location effects, but it is difficult to separate them out due to the correlation between geo-physical areas and the different (but overlapping) political mappings[the ward classification based on distance is just not explanatory to justify the crimes]. The top violent crimes show significance across the anacostia river and around the business areas of the district, near the white house and all around the Georgia Avenue and towards the North East side of DC and areas bordering the Prince Georgecounty.
