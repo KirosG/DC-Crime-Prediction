@@ -182,19 +182,35 @@ Approaches and Deliverables with the DC crime Prediction
 
   **1) Open Data DC**
 
-        -[Camera-enforcement-locations](https://opendata.dc.gov/datasets/camera-enforcement-locations)
-        -[Traffic-camera](https://opendata.dc.gov/datasets/traffic-camera)
-        -[GIS](https://www.arcgis.com/home/webmap/viewer.html?webmap=c88bff76cd3e4568800a19e9f361822e)
-        -[Crime-incidents-in-2017](https://opendata.dc.gov/datasets/crime-incidents-in-2017/data)
-        - [Crime-incidents-in-2016](https://opendata.dc.gov/datasets/crime-incidents-in-2016)
-        - [Crime-incidents-in-2015](https://opendata.dc.gov/datasets/crime-incidents-in-2015)
-        - [Crime-incidents-in-2014](https://opendata.dc.gov/datasets/crime-incidents-in-2014)
-        - [Crime-incidents-in-2013](https://opendata.dc.gov/datasets/crime-incidents-in-2013)
-        - [Crime-incidents-in-2012](https://opendata.dc.gov/datasets/crime-incidents-in-2012)
-        - [Real-property-tax-assessment-neighborhoods](http://opendata.dc.gov/datasets/real-property-tax-assessment-neighborhoods) 
-        - [Real-property-tax-assessment-sub-neighborhoods](http://opendata.dc.gov/datasets/real-property-tax-assessment-sub-neighborhoods)
-        -[house-prices-us#data](https://datahub.io/core/house-prices-us#data)
-              - fetched, June, 2018
+
+
+-[Camera-enforcement-locations](https://opendata.dc.gov/datasets/camera-enforcement-locations)
+
+-[Traffic-camera](https://opendata.dc.gov/datasets/traffic-camera)
+
+-[GIS](https://www.arcgis.com/home/webmap/viewer.html?webmap=c88bff76cd3e4568800a19e9f361822e)
+
+-[Crime-incidents-in-2017](https://opendata.dc.gov/datasets/crime-incidents-in-2017/data)
+
+-[Crime-incidents-in-2016](https://opendata.dc.gov/datasets/crime-incidents-in-2016)
+
+-[Crime-incidents-in-2015](https://opendata.dc.gov/datasets/crime-incidents-in-2015)
+
+-[Crime-incidents-in-2014](https://opendata.dc.gov/datasets/crime-incidents-in-2014)
+
+-[Crime-incidents-in-2013](https://opendata.dc.gov/datasets/crime-incidents-in-2013)
+
+-[Crime-incidents-in-2012](https://opendata.dc.gov/datasets/crime-incidents-in-2012)
+
+-[Real-property-tax-assessment-neighborhoods](http://opendata.dc.gov/datasets/real-property-tax-assessment-neighborhoods) 
+
+-[Real-property-tax-assessment-sub-neighborhoods](http://opendata.dc.gov/datasets/real-property-tax-assessment-sub-neighborhoods)
+
+-[house-prices-us#data](https://datahub.io/core/house-prices-us#data)
+
+[Time fetched, June, 2018]
+
+     
 
 **Additional from the Project lab**
 
@@ -202,7 +218,7 @@ Approaches and Deliverables with the DC crime Prediction
 
 **Problem Areas, Potential Questions, and Additional Resources**
 
-        In consultation with the Lab @ DC, we've organized questions into three main problem areas.  You are not limited to addressing these questions, but they are some of the questions that are currently of interest to The Lab!
+    In consultation with the Lab @ DC, we've organized questions into three main problem areas.  You are not limited to addressing these questions, but they are some of the questions that are currently of interest to The Lab!
 
 ---
 
@@ -279,8 +295,7 @@ As per the [home page for Indices on S&P website][sp-home]:
 > Series which seeks to measure changes in the total value of all existing
 > single-family housing stock.
 
-Documentation of the methodology can be found at:
-<http://www.spindices.com/documents/methodologies/methodology-sp-cs-home-price-indices.pdf>
+[Documentation of the methodology can be found at:](<http://www.spindices.com/documents/methodologies/methodology-sp-cs-home-price-indices.pdf>)
 
 Key points are (excerpted from methodology):
 
@@ -297,7 +312,7 @@ Key points are (excerpted from methodology):
   movements and is used by other home price ind ex publishers, including the
   Office of Federal Housing Enterprise Oversight (OFHEO)
 
-[sp-home]: http://www.spindices.com/index-family/real-estate/sp-case-shiller
+[Sp-home](http://www.spindices.com/index-family/real-estate/sp-case-shiller)
 
 ## Preparation
 
